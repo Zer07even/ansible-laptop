@@ -2,7 +2,7 @@
 
 Configuration for my Laptop (I use Xubuntu).
 
-![INSTALL ALL THE THINGS!](https://github.com/jackdbd/ansible-laptop/blob/master/install-all-the-things.jpg "INSTALL ALL THE THINGS!")
+![INSTALL ALL THE THINGS!](https://github.com/jackdbd/ansible-laptop/blob/main/install-all-the-things.jpg "INSTALL ALL THE THINGS!")
 
 First of all, you will need Ansible 2.8+ (because it can manage [snaps](https://docs.ansible.com/ansible/latest/modules/snap_module.html))
 
