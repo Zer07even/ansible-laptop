@@ -6,18 +6,10 @@
   snap:
     name: vlc
 
-- name: Add PPA required for OBS Studio
-  apt_repository:
-    repo: ppa:obsproject/obs-studio
-    state: present
-  
-- name: Install OBS Studio (live streaming and screen recording)
-  apt:
-    pkg: obs-studio
-    state: latest
-
 - name: Install youtube-dl
-  apt:
-    pkg: youtube-dl
-    state: latest
-  
+  snap:
+    name: youtube-dl
+    
+- name: Install gallery-dl
+  snap:
+    name: gallery-dl

@@ -1,0 +1,20 @@
+- name: Install Stacer
+  apt:
+    pkg: stacer
+    state: latest
+
+- name: Install a list of packages to their latest version
+  apt:
+    name: "{{ packages }}"
+    state: latest
+  vars:
+    packages:
+    - curl
+    - jq
+    - tldr
+    - tree
+    - net-tools
+
+- name: Install ncdu (NCurses Disk Usage, replacement for du)
+  snap:
+    name: ncdu
