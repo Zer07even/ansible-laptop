@@ -41,7 +41,7 @@
   ansible.builtin.apt_repository:
     repo: deb [arch=amd64] http://linux-packages.resilio.com/resilio-sync/deb resilio-sync non-free
     state: present
-    filename: google-chrome
+    filename: resilio-sync
     
 - name: Install resilio-sync
   ansible.builtin.apt:
