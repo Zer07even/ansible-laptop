@@ -1,0 +1,26 @@
+- name: Install a list of packages to their latest version
+  apt:
+    name: "{{ packages }}"
+    state: latest
+  vars:
+    packages:
+    - apt-transport-https
+    - gnupg
+
+
+- name: Add Trivy signing key
+  ansible.builtin.apt_key:
+    url: "https://aquasecurity.github.io/trivy-repo/deb/public.key"
+    state: present
+  
+- name: Add Trivy Repo into sources list
+  ansible.builtin.apt_repository:
+    repo: deb [arch=amd64] https://aquasecurity.github.io/trivy-repo/deb "{{ ansible_distribution_release }}" main
+    state: present
+    filename: trivy
+    
+- name: Install Trivy
+  ansible.builtin.apt:
+   name: "trivy"
+   state: latest
+   update_cache: true

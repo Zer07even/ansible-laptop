@@ -4,3 +4,4 @@
 # so it's better to exclud them from version control
 roles/geerlingguy.docker/
 roles/geerlingguy.java/
+roles/geerlingguy.clamav/

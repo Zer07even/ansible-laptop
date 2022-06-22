@@ -12,6 +12,8 @@
     - { role: multimedia, become: True }
     - { role: productivity, become: True }
     - { role: python, become: True }
+    - { role: security, become: True }
+    - { role: geerlingguy.clamav, become: True }
     - { role: common, become: True }
   tasks:
     - debug: msg="You are the user {{ lookup('env','USER') }}"
