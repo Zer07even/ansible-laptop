@@ -12,3 +12,8 @@
   apt:
     pkg: git
     state: latest
+
+- name: Install DBeaver
+  snap:
+    name: dbeaver-ce
+    channel: latest
