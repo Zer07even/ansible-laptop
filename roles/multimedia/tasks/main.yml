@@ -2,6 +2,16 @@
   snap:
     name: ffmpeg
 
+- name: Install ffmpegthumbnailer
+  ansible.builtin.apt:
+   name: "ffmpegthumbnailer"
+   state: latest
+
+- name: Install gstreamer1.0-libav
+  ansible.builtin.apt:
+   name: "gstreamer1.0-libav"
+   state: latest
+
 - name: Install VLC
   snap:
     name: vlc
@@ -13,3 +23,13 @@
 - name: Install gallery-dl
   snap:
     name: gallery-dl
+
+- name: Add WebP Support
+  ansible.builtin.apt_repository:
+    repo: 'ppa:helkaluin/webp-pixbuf-loader'
+    
+- name: Install webp-pixbuf-loader
+  ansible.builtin.apt:
+   name: "webp-pixbuf-loader"
+   state: latest
+   update_cache: true
