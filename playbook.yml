@@ -11,9 +11,10 @@
     #- { role: java, become: True }    
     - { role: multimedia, become: True }
     - { role: productivity, become: True }
+    - { role: utilities, become: True }
     - { role: python, become: True }
     - { role: security, become: True }
-    - { role: geerlingguy.clamav, become: True }
+    - { role: geerlingguy.clamav, become: True, clamav_daemon_enabled: false, clamav_freshclam_daemon_enabled: false }
     - { role: common, become: True }
   tasks:
     - debug: msg="You are the user {{ lookup('env','USER') }}"
