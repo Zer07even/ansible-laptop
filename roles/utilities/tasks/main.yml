@@ -15,6 +15,7 @@
     - tree
     - net-tools
     - wget
+    - glances
 
 - name: Install ncdu (NCurses Disk Usage, replacement for du)
   snap:
