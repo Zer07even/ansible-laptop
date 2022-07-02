@@ -5,16 +5,16 @@
     home_dir: "{{ lookup('env', 'HOME') }}"
   roles:
     - { role: chrome, become: True }
-    - { role: browsers, become: True }
-    - { role: development, become: True }
+    #- { role: browsers, become: True }
+    #- { role: development, become: True }
     - { role: geerlingguy.docker, become: True, docker_users: "{{ lookup('env', 'USER') }}" }
-    #- { role: games, become: True }
-    #- { role: java, become: True }    
+    - { role: games, become: True }
+    - { role: java, become: True }    
     - { role: multimedia, become: True }
-    - { role: backup, become: True }
-    - { role: productivity, become: True }
+    #- { role: backup, become: True }
+    #- { role: productivity, become: True }
     - { role: utilities, become: True }
-    - { role: python, become: True }
+    #- { role: python, become: True }
     - { role: security, become: True }
     - { role: geerlingguy.clamav, become: True, clamav_daemon_enabled: false, clamav_freshclam_daemon_enabled: false }
     - { role: common, become: True }
