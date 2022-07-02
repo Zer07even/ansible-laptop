@@ -33,3 +33,8 @@
    name: "webp-pixbuf-loader"
    state: latest
    update_cache: true
+
+- name: Install jpegoptim
+  ansible.builtin.apt:
+   name: "jpegoptim"
+   state: latest
