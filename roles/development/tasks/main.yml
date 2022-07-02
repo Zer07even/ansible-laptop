@@ -8,12 +8,29 @@
     name: postman
     channel: latest
 
-- name: Install GIT
-  apt:
-    pkg: git
-    state: latest
-
 - name: Install DBeaver
   snap:
     name: dbeaver-ce
     channel: latest
+
+- name: Add Trivy signing key
+  ansible.builtin.apt_key:
+    url: "https://aquasecurity.github.io/trivy-repo/deb/public.key"
+    state: present
+  
+- name: Add Trivy Repo into sources list
+  ansible.builtin.apt_repository:
+    repo: deb [arch=amd64] https://aquasecurity.github.io/trivy-repo/deb "{{ ansible_distribution_release }}" main
+    state: present
+    filename: trivy
+    
+- name: Install Trivy
+  ansible.builtin.apt:
+   name: "trivy"
+   state: latest
+   update_cache: true
+
+- name: Install awscli
+  apt:
+    pkg: awscli
+    state: latest

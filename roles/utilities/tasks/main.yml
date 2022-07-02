@@ -11,12 +11,24 @@
     packages:
     - curl
     - jq
+    - yq
     - tldr
     - tree
     - net-tools
     - wget
     - glances
+    - nmap
 
 - name: Install ncdu (NCurses Disk Usage, replacement for du)
   snap:
     name: ncdu
+
+- name: Gnome Tweaks
+  apt:
+    pkg: gnome-tweaks
+    state: latest 
+    
+- name: Gnome Extensions
+  apt:
+    pkg: gnome-shell-extension-manager
+    state: latest
