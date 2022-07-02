@@ -16,3 +16,19 @@
   file:
     path: "{{ home_dir }}/Minecraft.deb"
     state: absent
+
+- name: Add Lutris Repo into sources list
+  ansible.builtin.apt_repository:
+    repo: 'ppa:lutris-team/lutris'
+    
+- name: Install Lutris
+  ansible.builtin.apt:
+   name: "lutris"
+   state: latest
+   update_cache: true
+
+- name: Install Steam
+  ansible.builtin.apt:
+   name: "steam-installer"
+   state: latest
+   update_cache: true
