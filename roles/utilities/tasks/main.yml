@@ -31,3 +31,8 @@
   apt:
     pkg: gnome-shell-extension-manager
     state: latest
+    
+- name: Gnome Screensaver
+  apt:
+    pkg: gnome-screensaver
+    state: latest
